@@ -33,13 +33,11 @@ async def save_down(url):
         while True:
             data = await websocket.recv()
             data = json.loads(data)
-            print(data)
             # tuple (id, time, quantity, price)
             trades_buffer.append((data['a'], data['T'], data['q'], data['p'])) 
             
             # Saves to database when trades buffer is full
             if len(trades_buffer) > 10:
-                print("TRADE BUFFER REACHED")
                 async with aiosqlite3.connect("./data.db") as db:
                     await db.executemany(""" 
                                         INSERT INTO trades
@@ -47,7 +45,6 @@ async def save_down(url):
                                          (?,?,?,?)
                                          """, trades_buffer)
                     await db.commit()
-                    print("DATABASE WRITE COMPLETED")
                 trades_buffer = []
 
 asyncio.run(save_down(url))
