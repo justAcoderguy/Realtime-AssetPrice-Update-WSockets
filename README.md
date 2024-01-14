@@ -15,6 +15,6 @@ I've used **Plotly Dash** in python to query the data from the database at an in
 Because why not? I've been trading the forex and crypto market for more than 4 years now. Although I'm not the best trader out there ( I'm working on it :joy: ), I loved the visualisations we are 
 provided with. And I wanted to do it myself! AND I wanted to try out the realtime websocket data :))
 #### Lets see it?
-Sure!
+Sure! - Please note this was recorded on a Sunday so the number of trades are a bit low and the price doesnt update as quick. 
 
 https://github.com/justAcoderguy/Realtime-AssetPrice-Update-WSockets/assets/52568587/849b037e-a9fe-4e26-8743-29a33595b2d5
